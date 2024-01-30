@@ -112,6 +112,7 @@ footer {
   margin: 5%;
   align-items: center;
   /* justify-content: space-between; */
+  gap: 32px;
 }
 
 .container-nav {
@@ -133,4 +134,13 @@ footer {
 .container-nav > a.selected {
     background-color: #91f7bb;
     border-left: 2px solid #007930;
+}
+
+.question-form {
+  width: 80%;
+}
+
+#question_save {
+  background-color: #007930;
+  border-color: #91f7bb;
 }
