@@ -110,8 +110,6 @@ footer {
 .container {
   display: flex;
   margin: 5%;
-  align-items: center;
-  /* justify-content: space-between; */
   gap: 32px;
 }
 
@@ -143,4 +141,16 @@ footer {
 #question_save {
   background-color: #007930;
   border-color: #91f7bb;
+}
+
+.question-card {
+  display: flex;
+  gap: 16px;
+  border: 2px solid #c7c7c7;
+  box-shadow:  0  4px  8px  0 rgba(0,0,0,0.2);
+  padding: 16px;
+  margin-bottom: 16px;
+}
+ul {
+  list-style-type: none;
 }

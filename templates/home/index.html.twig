@@ -5,6 +5,37 @@
 
 {% block body %}
 	<div>
-			Hello Home
-		</div>
+		<ul>
+			{% for question in questions %}
+				<li>
+					<div class="question-card">
+						<span style="display:flex; flex-direction: column; align-items: center;">
+							{% if question.vote>0 %}
+								<i class="fa-solid fa-arrow-up" style="color: #91f7bb"></i>
+							{% else %}
+								<i class="fa-solid fa-arrow-up"></i>
+							{% endif %}
+							{{question.vote}}
+							{% if question.vote<0 %}
+								<i class="fa-solid fa-arrow-down" style="color: red"></i>
+							{% else %}
+								<i class="fa-solid fa-arrow-down"></i>
+							{% endif %}
+						</span>
+
+						<div>
+							<h2>{{question.titre}}</h2>
+							<span>{{question.contenu}}</span>
+							<hr>
+							<img src={{question.auteur.img_url}} alt="Photo de l'auteur" style="border-radius:  50%; width:  50px;		  height:  50px;">
+							Demandé par
+							<span style="color: #007930;">
+								{{ question.auteur.nom }}
+							</span>
+						</div>
+					</div>
+				</li>
+			{% endfor %}
+		</ul>
+	</div>
 {% endblock %}
