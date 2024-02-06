@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+{% block title %}Question detail
+{% endblock %}
+
+{% block body %}
+	<div class="question-detail">
+		<div>
+			<h1>{{question.title}}</h1>
+			<img src={{question.author.img_url}} alt="Photo de l'auteur" style="border-radius:  50%; width:  50px;		  height:  50px;">
+			Requested by
+			<span style="color: #007930;">
+				{{ question.author.name }}
+			</span>
+
+		</div>
+		<hr>
+		<div>
+			{{question.content}}
+		</div>
+	</div>
+
+{% endblock %}

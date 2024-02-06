@@ -22,4 +22,23 @@ class QuestionController extends AbstractController
             'form' => $formQuestion,
         ]);
     }
+    #[Route('/question/{id}', 'question_show')]
+    public function show(string $id): Response
+    {
+        // dd($id);
+        $question = [
+            "id" => 1,
+            "title" => "Title",
+            "content" => "Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum asperiores quod quis nisi, ab beatae ipsum sint obcaecati ipsam, modi officia excepturi voluptas, corporis at tempore fugit exercitationem repudiandae ipsa?",
+            "vote" => 4,
+            "author" => [
+                "name" => "Joe Doe",
+                "img_url" => "https://i.pravatar.cc/300"
+            ],
+            "nbr_answers" => 4
+        ];
+        return $this->render('question/show.html.twig', [
+            "question" => $question
+        ]);
+    }
 }

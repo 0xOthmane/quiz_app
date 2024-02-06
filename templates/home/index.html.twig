@@ -7,7 +7,7 @@
 	<div>
 		<ul>
 			{% for question in questions %}
-				<li>
+				<a href={{path('question_show',{id:question.id} )}} style="color: inherit; text-decoration: none;">
 					<div class="question-card">
 						<span style="display:flex; flex-direction: column; align-items: center;">
 							{% if question.vote>0 %}
@@ -24,17 +24,17 @@
 						</span>
 
 						<div>
-							<h2>{{question.titre}}</h2>
-							<span>{{question.contenu}}</span>
+							<h2>{{question.title}}</h2>
+							<span>{{question.content}}</span>
 							<hr>
-							<img src={{question.auteur.img_url}} alt="Photo de l'auteur" style="border-radius:  50%; width:  50px;		  height:  50px;">
-							Demandé par
+							<img src={{question.author.img_url}} alt="Photo de l'auteur" style="border-radius:  50%; width:  50px;		  height:  50px;">
+							Requested by
 							<span style="color: #007930;">
-								{{ question.auteur.nom }}
+								{{ question.author.name }}
 							</span>
 						</div>
 					</div>
-				</li>
+				</a>
 			{% endfor %}
 		</ul>
 	</div>

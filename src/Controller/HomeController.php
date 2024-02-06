@@ -13,34 +13,37 @@ class HomeController extends AbstractController
     {
         $questions = [
             [
-                "titre" => "Title",
-                "contenu" => "Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum asperiores quod quis nisi, ab beatae ipsum sint obcaecati ipsam, modi officia excepturi voluptas, corporis at tempore fugit exercitationem repudiandae ipsa?",
+                "id" => 1,
+                "title" => "Title",
+                "content" => "Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum asperiores quod quis nisi, ab beatae ipsum sint obcaecati ipsam, modi officia excepturi voluptas, corporis at tempore fugit exercitationem repudiandae ipsa?",
                 "vote" => 4,
-                "auteur" => [
-                    "nom" => "Joe Doe",
+                "author" => [
+                    "name" => "Joe Doe",
                     "img_url" => "https://i.pravatar.cc/300"
                 ],
-                "nbr_reponses" => 4
+                "nbr_answers" => 4
             ],
             [
-                "titre" => "Title",
-                "contenu" => "Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum asperiores quod quis nisi, ab beatae ipsum sint obcaecati ipsam, modi officia excepturi voluptas, corporis at tempore fugit exercitationem repudiandae ipsa?",
+                "id" => 2,
+                "title" => "Title",
+                "content" => "Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum asperiores quod quis nisi, ab beatae ipsum sint obcaecati ipsam, modi officia excepturi voluptas, corporis at tempore fugit exercitationem repudiandae ipsa?",
                 "vote" => 0,
-                "auteur" => [
-                    "nom" => "Joe Doe",
+                "author" => [
+                    "name" => "Joe Doe",
                     "img_url" => "https://i.pravatar.cc/300"
                 ],
-                "nbr_reponses" => 4
+                "nbr_answers" => 4
             ],
             [
-                "titre" => "Title",
-                "contenu" => "Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum asperiores quod quis nisi, ab beatae ipsum sint obcaecati ipsam, modi officia excepturi voluptas, corporis at tempore fugit exercitationem repudiandae ipsa?",
+                "id" => 3,
+                "title" => "Title",
+                "content" => "Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum asperiores quod quis nisi, ab beatae ipsum sint obcaecati ipsam, modi officia excepturi voluptas, corporis at tempore fugit exercitationem repudiandae ipsa?",
                 "vote" => -12,
-                "auteur" => [
-                    "nom" => "Joe Doe",
+                "author" => [
+                    "name" => "Joe Doe",
                     "img_url" => "https://i.pravatar.cc/300"
                 ],
-                "nbr_reponses" => 4
+                "nbr_answers" => 4
             ]
         ];
         return $this->render('home/index.html.twig', [
