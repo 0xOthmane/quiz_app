@@ -21,6 +21,9 @@ class Answer
     #[ORM\JoinColumn(nullable: false)]
     private ?Question $questionId = null;
 
+    #[ORM\Column]
+    private ?int $rating = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -46,6 +49,18 @@ class Answer
     public function setQuestionId(?Question $questionId): static
     {
         $this->questionId = $questionId;
+
+        return $this;
+    }
+
+    public function getRating(): ?int
+    {
+        return $this->rating;
+    }
+
+    public function setRating(int $rating): static
+    {
+        $this->rating = $rating;
 
         return $this;
     }
