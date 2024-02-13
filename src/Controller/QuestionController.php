@@ -2,7 +2,9 @@
 
 namespace App\Controller;
 
+use App\Entity\Question;
 use App\Form\QuestionType;
+use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -23,20 +25,10 @@ class QuestionController extends AbstractController
         ]);
     }
     #[Route('/question/{id}', 'question_show')]
-    public function show(string $id): Response
+    public function show(string $id, EntityManagerInterface $entityManager): Response
     {
         // dd($id);
-        $question = [
-            "id" => 1,
-            "title" => "Title",
-            "content" => "Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum asperiores quod quis nisi, ab beatae ipsum sint obcaecati ipsam, modi officia excepturi voluptas, corporis at tempore fugit exercitationem repudiandae ipsa?",
-            "vote" => 4,
-            "author" => [
-                "name" => "Joe Doe",
-                "img_url" => "https://i.pravatar.cc/300"
-            ],
-            "nbr_answers" => 4
-        ];
+        $question = $entityManager->getRepository(Question::class)->find($id);
         return $this->render('question/show.html.twig', [
             "question" => $question
         ]);
